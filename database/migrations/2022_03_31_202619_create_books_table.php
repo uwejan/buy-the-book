@@ -1,0 +1,45 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('books', function (Blueprint $table) {
+            $table->increments('id');
+            $table->unsignedBigInteger('kind_id');
+            $table->bigInteger('price');
+            $table->string('name')->unique();
+            $table->string('slug')->unique();
+            $table->text('description');
+            $table->string('image')->nullable();
+
+
+            $table
+                ->foreign('kind_id')
+                ->references('id')
+                ->on('book_kinds')
+                ->onDelete('cascade');
+
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('books');
+    }
+};
