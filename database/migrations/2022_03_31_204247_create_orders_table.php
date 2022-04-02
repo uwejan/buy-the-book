@@ -21,13 +21,11 @@ return new class extends Migration
                 ->onUpdate('cascade')->onDelete('set null');
 
 
-            $table->integer('book_id')->unsigned()->nullable();
-            $table->foreign('book_id')->references('id')->on('books')
-                ->onUpdate('cascade')->onDelete('set null');
+            $table->json('meta')->unsigned()->nullable();
 
-            $table->string('subtotal');
-            $table->string('tax');
-            $table->string('total');
+            $table->string('subtotal')->nullable();
+            $table->string('tax')->nullable();
+            $table->string('total')->nullable();
 
 
             $table->timestamps();

@@ -9,6 +9,12 @@ class Order extends Model
 {
     use HasFactory;
 
+
+    protected $casts = [
+        'order_meta' => 'array',
+    ];
+
+
     public function user()
     {
         return $this->belongsTo('App\Models\User');

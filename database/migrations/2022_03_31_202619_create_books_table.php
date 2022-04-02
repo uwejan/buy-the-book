@@ -26,7 +26,7 @@ return new class extends Migration
             $table
                 ->foreign('kind_id')
                 ->references('id')
-                ->on('book_kinds')
+                ->on('kinds')
                 ->onDelete('cascade');
 
             $table->timestamps();

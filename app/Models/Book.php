@@ -9,7 +9,7 @@ class Book extends Model
 {
     use HasFactory;
 
-    public function kind()
+    public function kinds()
     {
         return $this->belongsTo('App\Models\Kind', 'kind_id');
     }
@@ -18,4 +18,12 @@ class Book extends Model
     {
         return $this->belongsTo('App\Models\StockBook', 'book_id');
     }
+
+
+    public function orders()
+    {
+        return $this->hasMany('App\Models\OrderBook', 'book_id');
+    }
+
+
 }
