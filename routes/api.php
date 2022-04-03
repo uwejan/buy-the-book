@@ -86,11 +86,9 @@ Route::group([
 });
 
 
-
-
 /// Order Service
 Route::group([
-    //'middleware' => 'api',    /// Auth required
+    //'middleware' => 'api',    /// Auth required enabled inside controller
     'prefix' => 'orders'
 ], function () {
     Route::get('my', [OrderController::class, 'userOrders']);

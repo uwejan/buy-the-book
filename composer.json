@@ -4,11 +4,17 @@
     "description": "The Laravel Framework.",
     "keywords": ["framework", "laravel"],
     "license": "MIT",
+    "authors": [
+        {
+            "name": "SADDAM UWEJAN",
+            "email": "saddamuwejan@gmail.com",
+            "role": "Developer"
+        }
+    ],
     "require": {
         "php": "^8.0.2",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^9.2",
-        "laravel/helpers": "^1.5",
         "laravel/sanctum": "^2.14.1",
         "laravel/tinker": "^2.7",
         "php-open-source-saver/jwt-auth": "^1.4"
