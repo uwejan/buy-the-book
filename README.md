@@ -17,9 +17,9 @@ Another Cool matching API;
 - password: `password`
 - PostMan collection is on the base directory.
 
-##Licenses 
+## Licenses 
 -MIT
 
-##Author
+## Author
 - Saddam UWEJAN
 - saddamuwejan@gmail.com
