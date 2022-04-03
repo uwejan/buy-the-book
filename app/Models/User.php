@@ -13,6 +13,9 @@ class User extends Authenticatable implements JWTSubject
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    protected $with = ['orders'];
+
+
     /**
      * The attributes that are mass assignable.
      *
@@ -51,5 +54,10 @@ class User extends Authenticatable implements JWTSubject
     public function getJWTCustomClaims()
     {
         return [];
+    }
+
+    public function orders()
+    {
+        return $this->hasMany('App\Models\Order');
     }
 }

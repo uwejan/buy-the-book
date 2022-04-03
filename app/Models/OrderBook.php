@@ -9,4 +9,7 @@ class OrderBook extends Model
 {
     use HasFactory;
 
+    /// mass assignment
+    protected $guarded = [];
+
 }

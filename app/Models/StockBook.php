@@ -9,9 +9,18 @@ class StockBook extends Model
 {
     use HasFactory;
 
+    /// mass assignment
+    protected $guarded = [];
+
+
+    /// always get stock with books
+    //protected $with = ['books'];
+
+
+
     public function books()
     {
-        return $this->belongsToMany('App\Models\Book');
+        return $this->belongsTo('App\Models\Book', 'id');
     }
 
 }

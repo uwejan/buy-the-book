@@ -9,16 +9,23 @@ class Book extends Model
 {
     use HasFactory;
 
+    /// mass assignment
+    protected $guarded = [];
+
+
+    /// always get stock & kind with books
+    //protected $with = ['stocks'];
+
+
     public function kinds()
     {
         return $this->belongsTo('App\Models\Kind', 'kind_id');
     }
 
-    public function stock()
+    public function stocks()
     {
-        return $this->belongsTo('App\Models\StockBook', 'book_id');
+        return $this->hasOne('App\Models\StockBook', 'book_id');
     }
-
 
     public function orders()
     {
@@ -26,4 +33,22 @@ class Book extends Model
     }
 
 
+    /// helper function auto generate slug from title
+    public function setNameAttribute($value)
+    {
+        $this->attributes['name'] = $value;
+        $this->attributes['slug'] = str_slug($value);
+    }
+
+
+    public function setPriceAttribute($value)
+    {
+        return  $this->attributes['price']  = $value * 100;
+    }
+
+
+    public function getPriceAttribute()
+    {
+        return number_format( $this->attributes['price']  / 100, 2);
+    }
 }

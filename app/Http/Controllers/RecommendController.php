@@ -22,6 +22,9 @@ class RecommendController extends Controller
 
     /// Get the cheapest book for the kind provided
     /// Recommend books
+    /// Can be improved in case certain kind has not enough sales
+    /// Or has not enough books, by getting from other kind
+    /// Or creating midean table that has perecentage of similarities between kinds
     public function cheapestByKind($kind)
     {
         /// get the cheapest book that matches the provided kind
@@ -51,8 +54,6 @@ class RecommendController extends Controller
 
         /// In case we do not find 5 books, store slug of found books
         $names = addItemToArray($recs);
-
-
 
         /// get number of missing books to get
         $itemToGet = 5 - count($names);

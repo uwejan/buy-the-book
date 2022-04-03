@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedBigInteger('kind_id');
+            $table->integer('kind_id')->unsigned()->nullable();
             $table->bigInteger('price');
             $table->string('name')->unique();
             $table->string('slug')->unique();
@@ -27,7 +27,8 @@ return new class extends Migration
                 ->foreign('kind_id')
                 ->references('id')
                 ->on('kinds')
-                ->onDelete('cascade');
+                ->onDelete('cascade')
+                ->nullOnDelete();
 
             $table->timestamps();
         });

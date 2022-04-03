@@ -9,9 +9,15 @@ class Order extends Model
 {
     use HasFactory;
 
+    protected $with = ['details'];
 
+
+    /// mass assignment
+    protected $guarded = [];
+
+    /// cast in cas if order meta to be stored as JSON
     protected $casts = [
-        'order_meta' => 'array',
+        'meta' => 'array',
     ];
 
 
@@ -23,5 +29,10 @@ class Order extends Model
     public function books()
     {
         return $this->belongsToMany('App\Models\Book');
+    }
+
+    public function details()
+    {
+        return $this->hasMany('App\Models\OrderBook');
     }
 }
