@@ -26,7 +26,6 @@ class BookSeeder extends Seeder
                     'price' => [10000, 20000, 30000][array_rand([10000, 20000, 30000])],
                     'kind_id' => [1, 2, 3][array_rand([1, 2, 3])],
                     'name' => 'Book ' . $i,
-                    'slug' => 'book-' . $i,
                     'description' =>
                         [240, 250, 270][array_rand([240, 250, 270])] .
                         ' pages, ' .
