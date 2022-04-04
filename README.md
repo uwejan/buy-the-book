@@ -13,7 +13,7 @@ Another Cool matching API;
 - Run commands;
 - `composer install`
 - `php artisan BuyTheBookDummyData:install --force`
-- You cal logIn`using
+- You can logIn using
 - username: `user1@example.com` 
 - password: `password`
 - PostMan collection is on the base directory.
