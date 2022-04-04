@@ -11,6 +11,7 @@ Another Cool matching API;
 ## How tos;
 - Change database details in the `.env` file.
 - Run commands;
+- `composer install`
 - `php artisan BuyTheBookDummyData:install --force`
 - You cal logIn`using
 - username: `user1@example.com` 
@@ -18,7 +19,7 @@ Another Cool matching API;
 - PostMan collection is on the base directory.
 
 ## Licenses 
--MIT
+- MIT
 
 ## Author
 - Saddam UWEJAN
